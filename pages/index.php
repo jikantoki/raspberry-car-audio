@@ -32,6 +32,9 @@
       <div class="playerArtist">
         <span id="playerArtist"></span>
       </div>
+      <div class="playerPosition">
+        <span id="playerPotision"></span>/<span id="playerDuration"></span>
+      </div>
     </div>
   </div>
 </body>
@@ -50,6 +53,12 @@
       textedData.player.artist ?
         d.getElementById('playerArtist').innerText = textedData.player.artist :
         d.getElementById('playerArtist').innerText = ''
+      textedData.player.position ?
+        d.getElementById('playerPosition').innerText = textedData.player.position :
+        d.getElementById('playerPosition').innerText = '0'
+      textedData.player.duration ?
+        d.getElementById('playerDuration').innerText = textedData.player.duration :
+        d.getElementById('playerDuration').innerText = '0'
       console.log(textedData)
     }).catch((e) => {
       console.error(e)
