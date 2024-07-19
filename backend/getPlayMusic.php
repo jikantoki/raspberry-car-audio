@@ -1,11 +1,9 @@
 <?php
-passthru('echo うんちうんちうんち');
 
+/** execの結果を行ごとに配列にして保存 */
+$arraiedString = array();
 /** Bluetoothの現在のオーディオ情報を取得 */
-$getSource = passthru('(echo menu player && echo show) | bluetoothctl');
-$includeEnterWordString = str_replace(array("\r\n", "\r"), "\n", $getSource);
-/** 取得したデータが一行ごとに配列になっている */
-$arraiedString = explode("\n", $includeEnterWordString);
+$getSource = exec('(echo menu player && echo show) | bluetoothctl', $arraiedString);
 /** 現在の再生状況 */
 $player = array(
   'title' => null,
