@@ -31,12 +31,41 @@ $getSource = exec('(echo menu player && echo show) | bluetoothctl', $sourceArrai
 $player = array(
   'title' => null,
   'artist' => null,
-  'album' => null
+  'album' => null,
+  /** プレイヤー名 */
+  'name' => null,
+  /** 再生状態 */
+  'status' => null,
+  /** 再生位置 */
+  'position' => null,
+  /** 再生に必要な時間（だと思う） */
+  'duration' => null
 );
 foreach ($sourceArraiedString as $string) {
   //何も再生されていない場合、その旨を返す
   if (mb_strpos($string, 'No default player available') !== false) {
     break;
+  }
+  if (mb_strpos($string, 'Name: ') !== false) {
+    $player['name'] = mb_substr($string, mb_strlen('Name: ') + 1);
+  }
+  if (mb_strpos($string, 'Status: ') !== false) {
+    $player['status'] = mb_substr($string, mb_strlen('Status: ') + 1);
+  }
+  if (mb_strpos($string, 'Position: ') !== false) {
+    $player['position'] = mb_substr($string, mb_strlen('Position: ') + 1);
+  }
+  if (mb_strpos($string, 'Title: ') !== false) {
+    $player['title'] = mb_substr($string, mb_strlen('Title: ') + 1);
+  }
+  if (mb_strpos($string, 'Duration: ') !== false) {
+    $player['duration'] = mb_substr($string, mb_strlen('Duration: ') + 1);
+  }
+  if (mb_strpos($string, 'Album: ') !== false) {
+    $player['album'] = mb_substr($string, mb_strlen('Album: ') + 1);
+  }
+  if (mb_strpos($string, 'Artist: ') !== false) {
+    $player['artist'] = mb_substr($string, mb_strlen('Artist: ') + 1);
   }
 }
 $result = array(
