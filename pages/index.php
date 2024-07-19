@@ -14,10 +14,13 @@
 
 <script>
   const d = document
-  var getData = async () => {
-    const data = await fetch('/backend/getPlayMusic.php')
-    d.getElementById('data').innerText = data
-    console.log(data)
+  var getData = () => {
+    fetch('/backend/getPlayMusic.php').then((data) => {
+      d.getElementById('data').innerText = data
+      console.log(data)
+    }).catch((e) => {
+      console.error(e)
+    })
   }
 </script>
 
