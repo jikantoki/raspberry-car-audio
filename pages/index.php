@@ -8,6 +8,11 @@
 
 <body>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/header.php'); ?>
+  <div class="device">
+    <div class="deviceName">
+      接続デバイス: <span id="deviceName"></span>
+    </div>
+  </div>
   <div class="player">
     <div class="titleAndArtist">
       <div class="playerTitle">
@@ -25,9 +30,12 @@
   const getData = () => {
     fetch('/backend/getPlayMusic.php').then(async (data) => {
       const textedData = await data.json()
+      textedData.info.name ?
+        d.getElementById('deviceName').innerText = textedData.info.name :
+        d.getElementById('deviceName').innerText = 'なし'
       textedData.player.title ?
         d.getElementById('playerTitle').innerText = textedData.player.title :
-        d.getElementById('playerTitle').innerText = '接続なし'
+        d.getElementById('playerTitle').innerText = 'メディアなし'
       textedData.player.artist ?
         d.getElementById('playerArtist').innerText = textedData.player.artist :
         d.getElementById('playerArtist').innerText = ''
