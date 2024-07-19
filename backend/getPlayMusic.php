@@ -10,15 +10,15 @@ $info = array(
 );
 foreach ($infoArraiedString as $string) {
   //何も接続されていない場合、その旨を返す
-  if (strpos($string, 'Missing device address argument') !== false) {
+  if (mb_strpos($string, 'Missing device address argument') !== false) {
     //bluetoothを検出可能にする（ペアリング待ち）
     exec('bluetoothctl discoverable on');
     break;
   }
 
   //接続情報がゲットできた場合
-  if (strpos($string, 'Name: ') !== false) {
-    $info['name'] = substr($string, strpos($string, 'Name: ') + 1);
+  if (mb_strpos($string, 'Name: ') !== false) {
+    $info['name'] = mb_substr($string, mb_strlen($string, 'Name: '));
   }
 }
 
@@ -34,7 +34,7 @@ $player = array(
 );
 foreach ($sourceArraiedString as $string) {
   //何も再生されていない場合、その旨を返す
-  if (strpos($string, 'No default player available') !== false) {
+  if (mb_strpos($string, 'No default player available') !== false) {
     break;
   }
 }
