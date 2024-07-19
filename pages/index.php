@@ -9,6 +9,16 @@
 <body>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/header.php'); ?>
   <button id="getDataButton" onclick="getData()">データ取得</button>
+  <div class="player">
+    <div class="titleAndArtist">
+      <div class="playerTitle">
+        <span id="playerTitle"></span>
+      </div>
+      <div class="playerArtist">
+        <span id="playerArtist"></span>
+      </div>
+    </div>
+  </div>
   <div id="data"></div>
 </body>
 
@@ -18,22 +28,12 @@
     fetch('/backend/getPlayMusic.php').then(async (data) => {
       const textedData = await data.json()
       d.getElementById('data').innerText = textedData
+      d.getElementById('playerTitle').innerText = textedData.player.title
+      d.getElementById('playerArtist').innerText = textedData.player.artist
       console.log(textedData)
     }).catch((e) => {
       console.error(e)
     })
-  }
-  const unicodeUnescape = (str) => {
-    let result = '',
-      strs = str.match(/\\u.{4}/ig);
-
-    if (!strs) return '';
-
-    for (let i = 0, len = strs.length; i < len; i++) {
-      result += String.fromCharCode(strs[i].replace('\\u', '0x'));
-    }
-
-    return result;
   }
 </script>
 
