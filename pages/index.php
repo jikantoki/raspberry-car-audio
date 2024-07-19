@@ -16,9 +16,8 @@
   const d = document
   var getData = () => {
     fetch('/backend/getPlayMusic.php').then(async (data) => {
-      const textedData = await new Response(data.body)
-      d.getElementById('data').innerText = textedData
-      console.log(textedData)
+      d.getElementById('data').innerText = data
+      console.log(data)
     }).catch((e) => {
       console.error(e)
     })
