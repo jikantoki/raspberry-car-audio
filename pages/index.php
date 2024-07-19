@@ -4,6 +4,15 @@
 
 <head>
   <title>Raspberry Car Audio</title>
+  <style>
+    #playerTitle {
+      font-size: 2em;
+    }
+
+    .player {
+      display: flex;
+    }
+  </style>
 </head>
 
 <body>
