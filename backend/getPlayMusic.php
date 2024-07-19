@@ -56,7 +56,7 @@ foreach ($sourceArraiedString as $string) {
     $player['position'] = mb_substr($string, mb_strlen('Position: ') + 1);
   }
   if (mb_strpos($string, 'Title: ') !== false) {
-    $player['title'] = substr($string, mb_strlen('Title: ') + 1);
+    $player['title'] = mb_substr($string, mb_strlen('Title: ') + 1);
   }
   if (mb_strpos($string, 'Duration: ') !== false) {
     $player['duration'] = mb_substr($string, mb_strlen('Duration: ') + 1);
