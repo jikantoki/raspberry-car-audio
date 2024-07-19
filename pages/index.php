@@ -14,7 +14,7 @@
 
 <script>
   const d = document
-  var getData = () => {
+  const getData = () => {
     fetch('/backend/getPlayMusic.php').then(async (data) => {
       const textedData = await data.text()
       d.getElementById('data').innerText = textedData
@@ -22,6 +22,18 @@
     }).catch((e) => {
       console.error(e)
     })
+  }
+  const unicodeUnescape = (str) => {
+    let result = '',
+      strs = str.match(/\\u.{4}/ig);
+
+    if (!strs) return '';
+
+    for (let i = 0, len = strs.length; i < len; i++) {
+      result += String.fromCharCode(strs[i].replace('\\u', '0x'));
+    }
+
+    return result;
   }
 </script>
 
