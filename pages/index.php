@@ -15,9 +15,10 @@
 <script>
   const d = document
   var getData = () => {
-    fetch('/backend/getPlayMusic.php').then((data) => {
-      d.getElementById('data').innerText = data.body
-      console.log(data)
+    fetch('/backend/getPlayMusic.php').then(async (data) => {
+      const d = await new Response(data).text()
+      d.getElementById('data').innerText = d
+      console.log(d)
     }).catch((e) => {
       console.error(e)
     })
