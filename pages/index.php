@@ -10,7 +10,8 @@
     }
 
     .playerTitle,
-    .playerArtist {
+    .playerArtist,
+    .playerAlbum {
       display: flex;
       justify-content: center;
     }
@@ -31,6 +32,9 @@
       </div>
       <div class="playerArtist">
         <span id="playerArtist"></span>
+      </div>
+      <div class="playerAlbum">
+        <span id="playerAlbum"></span>
       </div>
       <div class="playerPosition">
         <span id="playerPosition"></span>/<span id="playerDuration"></span>
@@ -53,6 +57,9 @@
       textedData.player.artist ?
         d.getElementById('playerArtist').innerText = textedData.player.artist :
         d.getElementById('playerArtist').innerText = ''
+      textedData.player.album ?
+        d.getElementById('playerAlbum').innerText = textedData.player.album :
+        d.getElementById('playerAlbum').innerText = ''
       textedData.player.position ?
         d.getElementById('playerPosition').innerText = textedData.player.position :
         d.getElementById('playerPosition').innerText = '0'
