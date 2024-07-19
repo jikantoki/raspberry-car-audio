@@ -1,4 +1,5 @@
 <?php
+mb_internal_encoding("UTF-8");
 
 /** execの結果を行ごとに配列にして保存 */
 $infoArraiedString = array();
