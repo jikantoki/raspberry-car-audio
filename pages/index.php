@@ -27,8 +27,10 @@
       const textedData = await data.json()
       textedData.player.title ?
         d.getElementById('playerTitle').innerText = textedData.player.title :
-        d.getElementById('playerTitle').innerText = 'Null'
-      d.getElementById('playerArtist').innerText = textedData.player.artist
+        d.getElementById('playerTitle').innerText = '接続なし'
+      textedData.player.artist ?
+        d.getElementById('playerArtist').innerText = textedData.player.artist :
+        d.getElementById('playerArtist').innerText = ''
       console.log(textedData)
     }).catch((e) => {
       console.error(e)
