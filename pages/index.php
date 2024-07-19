@@ -14,6 +14,8 @@
     .playerAlbum {
       display: flex;
       justify-content: center;
+      text-wrap: nowrap;
+      overflow: hidden;
     }
   </style>
 </head>
