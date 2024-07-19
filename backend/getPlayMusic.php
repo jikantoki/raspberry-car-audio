@@ -55,13 +55,20 @@ foreach ($sourceArraiedString as $string) {
   }
   if (mb_strpos($string, 'Position: ') !== false) {
     $player['position'] = mb_substr($string, mb_strlen('Position: ') + 1);
+    /** カッコが始まるまでの情報を削除 */
+    $player['position'] = mb_substr($player['position'], mb_strpos($player['position'], '(') + 1);
+    /** 最後の一文字が不要なので削除 */
+    $player['position'] = mb_substr($player['position'], 0, -1);
   }
   if (mb_strpos($string, 'Title: ') !== false) {
     $player['title'] = mb_substr($string, mb_strlen('Title: ') + 1);
   }
   if (mb_strpos($string, 'Duration: ') !== false) {
     $player['duration'] = mb_substr($string, mb_strlen('Duration: ') + 1);
+    /** カッコが始まるまでの情報を削除 */
     $player['duration'] = mb_substr($player['duration'], mb_strpos($player['duration'], '(') + 1);
+    /** 最後の一文字が不要なので削除 */
+    $player['duration'] = mb_substr($player['duration'], 0, -1);
   }
   if (mb_strpos($string, 'Album: ') !== false) {
     $player['album'] = mb_substr($string, mb_strlen('Album: ') + 1);
