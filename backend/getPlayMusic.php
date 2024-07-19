@@ -1,4 +1,5 @@
 <?php
+passthru('echo うんちうんちうんち');
 
 /** Bluetoothの現在のオーディオ情報を取得 */
 $getSource = passthru('(echo menu player && echo show) | bluetoothctl');
@@ -17,4 +18,5 @@ foreach ($arraiedString as $string) {
     break;
   }
 }
-echo json_encode($player . "\n");
+echo json_encode($player);
+echo "\n";
