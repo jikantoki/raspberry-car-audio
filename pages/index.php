@@ -16,7 +16,7 @@
   const d = document
   var getData = () => {
     fetch('/backend/getPlayMusic.php').then((data) => {
-      d.getElementById('data').innerText = data
+      d.getElementById('data').innerText = data.body
       console.log(data)
     }).catch((e) => {
       console.error(e)
