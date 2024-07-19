@@ -9,8 +9,10 @@
       font-size: 2em;
     }
 
-    .player {
+    .playerTitle,
+    .playerArtist {
       display: flex;
+      justify-content: center;
     }
   </style>
 </head>
