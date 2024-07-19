@@ -11,7 +11,7 @@ $player = array(
   'album' => null
 );
 foreach ($arraiedString as $string) {
-  if (strpos($string, 'No default player available')) {
+  if (strpos($string, 'No default player available') !== false) {
     echo 'オワタ';
     break;
   }
