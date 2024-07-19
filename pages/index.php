@@ -25,7 +25,9 @@
   const getData = () => {
     fetch('/backend/getPlayMusic.php').then(async (data) => {
       const textedData = await data.json()
-      d.getElementById('playerTitle').innerText = textedData.player.title
+      textedData.player.title ?
+        d.getElementById('playerTitle').innerText = textedData.player.title :
+        d.getElementById('playerTitle').innerText = 'Null'
       d.getElementById('playerArtist').innerText = textedData.player.artist
       console.log(textedData)
     }).catch((e) => {
