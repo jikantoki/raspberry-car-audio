@@ -16,7 +16,7 @@
   const d = document
   const getData = () => {
     fetch('/backend/getPlayMusic.php').then(async (data) => {
-      const textedData = await data.text()
+      const textedData = await data.json()
       d.getElementById('data').innerText = textedData
       console.log(textedData)
     }).catch((e) => {
