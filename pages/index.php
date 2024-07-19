@@ -33,7 +33,7 @@
         <span id="playerArtist"></span>
       </div>
       <div class="playerPosition">
-        <span id="playerPotision"></span>/<span id="playerDuration"></span>
+        <span id="playerPosition"></span>/<span id="playerDuration"></span>
       </div>
     </div>
   </div>
