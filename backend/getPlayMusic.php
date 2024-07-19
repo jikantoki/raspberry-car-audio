@@ -17,4 +17,4 @@ foreach ($arraiedString as $string) {
     break;
   }
 }
-echo json_encode($player);
+echo json_encode($player . "\n");
