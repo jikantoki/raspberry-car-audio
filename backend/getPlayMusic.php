@@ -18,7 +18,8 @@ foreach ($infoArraiedString as $string) {
 
   //接続情報がゲットできた場合
   if (mb_strpos($string, 'Name: ') !== false) {
-    $info['name'] = mb_substr($string, mb_strlen('Name: '));
+    /** 接続した端末名 */
+    $info['name'] = mb_substr($string, mb_strlen('Name: ') + 1);
   }
 }
 
