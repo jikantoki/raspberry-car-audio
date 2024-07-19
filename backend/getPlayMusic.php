@@ -15,6 +15,11 @@ foreach ($infoArraiedString as $string) {
     exec('bluetoothctl discoverable on');
     break;
   }
+
+  //接続情報がゲットできた場合
+  if (strpos($string, 'Name: ') !== false) {
+    $info['name'] = substr($string, strpos($string, 'Name: ') + 1);
+  }
 }
 
 /** execの結果を行ごとに配列にして保存 */
@@ -33,5 +38,9 @@ foreach ($sourceArraiedString as $string) {
     break;
   }
 }
-echo json_encode($player);
+$result = array(
+  'info' => $info,
+  'player' => $player
+);
+echo json_encode($result);
 echo "\n";
