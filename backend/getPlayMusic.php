@@ -12,7 +12,8 @@ foreach ($infoArraiedString as $string) {
   //何も接続されていない場合、その旨を返す
   if (mb_strpos($string, 'Missing device address argument') !== false) {
     //bluetoothを検出可能にする（ペアリング待ち）
-    exec('bluetoothctl discoverable on');
+    //既に接続されている機器に影響が出るので廃止
+    //exec('bluetoothctl discoverable on');
     break;
   }
 
