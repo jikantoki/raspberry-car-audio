@@ -37,9 +37,9 @@ $player = array(
   'name' => null,
   /** 再生状態 */
   'status' => null,
-  /** 再生位置 */
+  /** 再生位置（ミリ秒） */
   'position' => null,
-  /** 再生に必要な時間（だと思う） */
+  /** 曲の時間（ミリ秒） */
   'duration' => null
 );
 foreach ($sourceArraiedString as $string) {
