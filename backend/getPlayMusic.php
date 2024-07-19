@@ -61,7 +61,7 @@ foreach ($sourceArraiedString as $string) {
   }
   if (mb_strpos($string, 'Duration: ') !== false) {
     $player['duration'] = mb_substr($string, mb_strlen('Duration: ') + 1);
-    $player['duration'] = mb_substr($player['duration'], mb_strlen('(') + 1);
+    $player['duration'] = mb_substr($player['duration'], mb_strpos($player['duration'], '(') + 1);
   }
   if (mb_strpos($string, 'Album: ') !== false) {
     $player['album'] = mb_substr($string, mb_strlen('Album: ') + 1);
