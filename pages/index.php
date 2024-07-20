@@ -34,16 +34,16 @@
   <div class="player">
     <div class="titleAndArtist">
       <div class="playerTitle">
-        <span id="playerTitle"> </span>
+        <span id="playerTitle">　</span>
       </div>
       <div class="playerArtist">
-        <span id="playerArtist"> </span>
+        <span id="playerArtist">　</span>
       </div>
       <div class="playerAlbum">
-        <span id="playerAlbum"> </span>
+        <span id="playerAlbum">　</span>
       </div>
       <div class="playerPosition">
-        <span id="playerPosition"> </span>/<span id="playerDuration"> </span>
+        <span id="playerPosition">　</span>/<span id="playerDuration">　</span>
       </div>
     </div>
   </div>
