@@ -5,6 +5,10 @@
 <head>
   <title>Raspberry Car Audio</title>
   <style>
+    body {
+      font-size: 5vw;
+    }
+
     #playerTitle {
       font-size: 2em;
     }
