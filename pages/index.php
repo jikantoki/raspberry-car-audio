@@ -125,11 +125,9 @@
         ) * 10
       ) / 10
       if (nowPlayPosition !== setPlayPosition) {
-        console.log(`${nowPlayPosition} vs ${setPlayPosition}`)
         if (nowPlayPosition < setPlayPosition) {
           d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
         } else {
-          console.warn('warn!!!')
           //再生時間が戻る場合はアニメーションを切る
           d.getElementById('nowPlayPosition').style.transition = `all 0.0s`
           d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
@@ -138,7 +136,7 @@
           }, 1000)
         }
       }
-      //console.log(textedData)
+      console.log(textedData)
     }).catch((e) => {
       console.error(e)
     })
