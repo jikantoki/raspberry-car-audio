@@ -112,10 +112,20 @@
       updatePlayerText(textedData.player.album, 'playerAlbum')
       updatePlayerText(textedData.player.position, 'playerPosition', '0')
       updatePlayerText(textedData.player.duration, 'playerDuration', '0')
+      /** 現在何%まで再生されているか？ */
       const nowPlayPosition = Number(d.getElementById('nowPlayPosition').style.width.replace(/%/, ''))
-      console.log(nowPlayPosition)
+      /** 次は何%に設定するのか */
       const setPlayPosition = (textedData.player.position / textedData.player.duration) * 100
-      d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
+      if (nowPlayPosition !== setPlayPosition) {
+        if (nowPlayPosition < setPlayPosition) {
+          d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
+        } else {
+          //再生時間が戻る場合はアニメーションを切る
+          d.getElementById('nowPlayPosition').style.transition = `all 0.0s`
+          d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
+          d.getElementById('nowPlayPosition').style.transition = `all 0.5s`
+        }
+      }
       //console.log(textedData)
     }).catch((e) => {
       console.error(e)
