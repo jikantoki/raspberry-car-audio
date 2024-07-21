@@ -112,9 +112,10 @@
       updatePlayerText(textedData.player.album, 'playerAlbum')
       updatePlayerText(textedData.player.position, 'playerPosition', '0')
       updatePlayerText(textedData.player.duration, 'playerDuration', '0')
-      d.getElementById('nowPlayPosition').style.width =
-        `${(textedData.player.position / textedData.player.duration) * 100}%`
-      console.log(`${(textedData.player.position / textedData.player.duration) * 100}%`)
+      const nowPlayPosition = d.getElementById('nowPlayPosition').style.width
+      console.log(nowPlayPosition)
+      const setPlayPosition = (textedData.player.position / textedData.player.duration) * 100
+      d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
       //console.log(textedData)
     }).catch((e) => {
       console.error(e)
