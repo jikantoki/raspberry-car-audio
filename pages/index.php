@@ -51,6 +51,11 @@
       <div class="playerPosition">
         <span id="playerPosition">　</span>/<span id="playerDuration">　</span>
       </div>
+      <div class="playBar">
+        <div class="fullPlayBar">
+          <div class="nowPlayPosition"></div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
