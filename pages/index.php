@@ -113,9 +113,15 @@
       updatePlayerText(textedData.player.position, 'playerPosition', '0')
       updatePlayerText(textedData.player.duration, 'playerDuration', '0')
       /** 現在何%まで再生されているか？ */
-      const nowPlayPosition = Number(d.getElementById('nowPlayPosition').style.width.replace(/%/, ''))
+      const nowPlayPosition = Math.round(
+        Number(
+          d.getElementById('nowPlayPosition').style.width.replace(/%/, '')
+        )
+      )
       /** 次は何%に設定するのか */
-      const setPlayPosition = (textedData.player.position / textedData.player.duration) * 100
+      const setPlayPosition = Math.round(
+        (textedData.player.position / textedData.player.duration) * 100
+      )
       if (nowPlayPosition !== setPlayPosition) {
         console.log(`${nowPlayPosition} vs ${setPlayPosition}`)
         if (nowPlayPosition < setPlayPosition) {
