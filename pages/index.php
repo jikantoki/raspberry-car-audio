@@ -51,27 +51,33 @@
 
 <script>
   const d = document
+  /**
+   * 画面に表示されているテキストを更新
+   * * 更新があれば書き換え、同じ情報なら書き換えない
+   * @param string $playData 新しく反映したい情報（曲名やアーティストなど）
+   * @param string $elementId 反映させたい場所のエレメントID
+   * @param string $noConnectMessage 未接続などエラー時のメッセージ
+   */
+  const updatePlayerText = (playData, elementId, noConnectMessage) => {
+    if (playData) {
+      if (playData !== d.getElementById(elementId).innerText) {
+        d.getElementById(elementId).innerText = textedData.info.name
+      }
+    } else {
+      if (noConnectMessage != d.getElementById(elementId).innerText) {
+        d.getElementById(elementId).innerText = noConnectMessage
+      }
+    }
+  }
   const getData = () => {
     fetch('/backend/getPlayMusic.php').then(async (data) => {
       const textedData = await data.json()
-      textedData.info.name ?
-        d.getElementById('deviceName').innerText = textedData.info.name :
-        d.getElementById('deviceName').innerText = 'なし'
-      textedData.player.title ?
-        d.getElementById('playerTitle').innerText = textedData.player.title :
-        d.getElementById('playerTitle').innerText = 'メディアなし'
-      textedData.player.artist ?
-        d.getElementById('playerArtist').innerText = textedData.player.artist :
-        d.getElementById('playerArtist').innerText = ''
-      textedData.player.album ?
-        d.getElementById('playerAlbum').innerText = textedData.player.album :
-        d.getElementById('playerAlbum').innerText = ''
-      textedData.player.position ?
-        d.getElementById('playerPosition').innerText = textedData.player.position :
-        d.getElementById('playerPosition').innerText = '0'
-      textedData.player.duration ?
-        d.getElementById('playerDuration').innerText = textedData.player.duration :
-        d.getElementById('playerDuration').innerText = '0'
+      updatePlayerText(textedData.info.name, 'deviceName', 'なし')
+      updatePlayerText(textedData.player.title, 'playerTitle', 'メディアなし')
+      updatePlayerText(textedData.player.artist, 'playerArtist')
+      updatePlayerText(textedData.player.album, 'playerAlbum')
+      updatePlayerText(textedData.player.position, 'playerPosition', '0')
+      updatePlayerText(textedData.player.duration, 'playerDuration', '0')
       console.log(textedData)
     }).catch((e) => {
       console.error(e)
