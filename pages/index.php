@@ -61,7 +61,7 @@
   const updatePlayerText = (playData, elementId, noConnectMessage) => {
     if (playData) {
       if (playData !== d.getElementById(elementId).innerText) {
-        d.getElementById(elementId).innerText = textedData.info.name
+        d.getElementById(elementId).innerText = playData
       }
     } else {
       if (noConnectMessage != d.getElementById(elementId).innerText) {
