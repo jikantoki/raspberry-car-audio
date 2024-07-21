@@ -21,6 +21,22 @@
       text-wrap: nowrap;
       overflow: hidden;
     }
+
+    .playBar,
+    .fullPlayBar,
+    .nowPlayPosition {
+      height: 1em;
+    }
+
+    .fullPlayBar {
+      background-color: greenyellow;
+      width: 100%;
+    }
+
+    .nowPlayPosition {
+      background-color: red;
+      width: 0%;
+    }
   </style>
 </head>
 
