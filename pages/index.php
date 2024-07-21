@@ -34,14 +34,18 @@
   <div class="player">
     <div class="titleAndArtist">
       <div class="playerTitle">
-        <span id="playerTitle">　</span>
+        <span class="spaceWord">　</span>
+        <span id="playerTitle"></span>
+        <span class="spaceWord">　</span>
       </div>
       <div class="playerArtist">
-        <span id="playerArtist">　</span>
+        <span class="spaceWord">　</span>
+        <span id="playerArtist"></span>
+        <span class="spaceWord">　</span>
       </div>
       <div class="playerAlbum">
         <span class="spaceWord">　</span>
-        <span id="playerAlbum">　</span>　
+        <span id="playerAlbum"></span>
         <span class="spaceWord">　</span>
       </div>
       <div class="playerPosition">
