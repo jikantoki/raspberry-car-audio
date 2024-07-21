@@ -69,7 +69,7 @@
       </div>
       <div class="playBar">
         <div class="fullPlayBar">
-          <div class="nowPlayPosition"></div>
+          <div class="nowPlayPosition" id="nowPlayPosition"></div>
         </div>
       </div>
     </div>
@@ -111,6 +111,8 @@
       updatePlayerText(textedData.player.album, 'playerAlbum')
       updatePlayerText(textedData.player.position, 'playerPosition', '0')
       updatePlayerText(textedData.player.duration, 'playerDuration', '0')
+      d.getElementById('nowPlayPosition').clientWidth =
+        `${(textedData.player.position / textedData.player.duration) * 100}%`
       console.log(textedData)
     }).catch((e) => {
       console.error(e)
