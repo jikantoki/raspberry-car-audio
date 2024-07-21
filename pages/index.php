@@ -25,7 +25,7 @@
     .playBar,
     .fullPlayBar,
     .nowPlayPosition {
-      height: 1em;
+      height: 0.5em;
     }
 
     .fullPlayBar {
@@ -36,6 +36,7 @@
     .nowPlayPosition {
       background-color: red;
       width: 0%;
+      transition: all 0.5s;
     }
   </style>
 </head>
