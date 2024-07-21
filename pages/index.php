@@ -6,7 +6,7 @@
   <title>Raspberry Car Audio</title>
   <style>
     body {
-      font-size: 5vw;
+      font-size: 4vw;
     }
 
     #playerTitle {
@@ -112,7 +112,7 @@
       updatePlayerText(textedData.player.album, 'playerAlbum')
       updatePlayerText(textedData.player.position, 'playerPosition', '0')
       updatePlayerText(textedData.player.duration, 'playerDuration', '0')
-      const nowPlayPosition = d.getElementById('nowPlayPosition').style.width
+      const nowPlayPosition = Number(d.getElementById('nowPlayPosition').style.width.replace(/%/, ''))
       console.log(nowPlayPosition)
       const setPlayPosition = (textedData.player.position / textedData.player.duration) * 100
       d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
