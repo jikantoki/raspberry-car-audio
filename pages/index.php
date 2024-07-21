@@ -103,6 +103,20 @@
       }
     }
   }
+
+  const Millisec2Time = (millisec) => {
+    /** ミリ秒を秒に変換 */
+    const sec = Math.floor(millisec / 1000)
+    /** 秒を分に変換 */
+    const min = String(Math.floor(sec / 60)).padStart(2, '0')
+    /** 分に変換した際の余りの秒 */
+    const minOverSec = String(sec % 60).padStart(2, '0')
+    return `${min}:${minOverSec}`
+  }
+
+  /**
+   * 定期的なデータの取得（メインプログラム）
+   */
   const getData = () => {
     fetch('/backend/getPlayMusic.php').then(async (data) => {
       const textedData = await data.json()
