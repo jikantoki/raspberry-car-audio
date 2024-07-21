@@ -113,7 +113,8 @@
       updatePlayerText(textedData.player.duration, 'playerDuration', '0')
       d.getElementById('nowPlayPosition').clientWidth =
         `${(textedData.player.position / textedData.player.duration) * 100}%`
-      console.log(textedData)
+      console.log(`${(textedData.player.position / textedData.player.duration) * 100}%`)
+      //console.log(textedData)
     }).catch((e) => {
       console.error(e)
     })
