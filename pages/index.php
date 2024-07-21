@@ -43,6 +43,11 @@
       display: flex;
     }
 
+    #playerPosition,
+    #playerDuration {
+      width: 50%;
+    }
+
     #playerDuration {
       text-align: right;
     }
