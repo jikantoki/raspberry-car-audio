@@ -133,7 +133,7 @@
           //再生時間が戻る場合はアニメーションを切る
           d.getElementById('nowPlayPosition').style.transition = `all 0.0s`
           d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
-          d.getElementById('nowPlayPosition').style.transition = null
+          d.getElementById('nowPlayPosition').style.transition = ''
         }
       }
       //console.log(textedData)
