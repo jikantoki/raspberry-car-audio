@@ -117,6 +117,7 @@
       /** 次は何%に設定するのか */
       const setPlayPosition = (textedData.player.position / textedData.player.duration) * 100
       if (nowPlayPosition !== setPlayPosition) {
+        console.log(`${nowPlayPosition} vs ${setPlayPosition}`)
         if (nowPlayPosition < setPlayPosition) {
           d.getElementById('nowPlayPosition').style.width = `${setPlayPosition}%`
         } else {
