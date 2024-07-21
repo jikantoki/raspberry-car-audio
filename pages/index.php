@@ -116,12 +116,14 @@
       const nowPlayPosition = Math.round(
         Number(
           d.getElementById('nowPlayPosition').style.width.replace(/%/, '')
-        )
-      )
+        ) * 10
+      ) / 10
       /** 次は何%に設定するのか */
       const setPlayPosition = Math.round(
-        (textedData.player.position / textedData.player.duration) * 100
-      )
+        (
+          (textedData.player.position / textedData.player.duration) * 100
+        ) * 10
+      ) / 10
       if (nowPlayPosition !== setPlayPosition) {
         console.log(`${nowPlayPosition} vs ${setPlayPosition}`)
         if (nowPlayPosition < setPlayPosition) {
