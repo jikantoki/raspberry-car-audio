@@ -40,7 +40,9 @@
         <span id="playerArtist">　</span>
       </div>
       <div class="playerAlbum">
-        <span id="playerAlbum">　</span>
+        <span class="spaceWord">　</span>
+        <span id="playerAlbum">　</span>　
+        <span class="spaceWord">　</span>
       </div>
       <div class="playerPosition">
         <span id="playerPosition">　</span>/<span id="playerDuration">　</span>
