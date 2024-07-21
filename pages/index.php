@@ -64,8 +64,14 @@
         d.getElementById(elementId).innerText = playData
       }
     } else {
-      if (noConnectMessage != d.getElementById(elementId).innerText) {
-        d.getElementById(elementId).innerText = noConnectMessage
+      if (noConnectMessage) {
+        if (noConnectMessage != d.getElementById(elementId).innerText) {
+          d.getElementById(elementId).innerText = noConnectMessage
+        }
+      } else {
+        if (d.getElementById(elementId).innerText) {
+          d.getElementById(elementId).innerText = null
+        }
       }
     }
   }
@@ -84,7 +90,8 @@
     })
   }
 
-  setInterval(getData, 100)
+  /** ここで指定したミリ秒毎に情報を更新 */
+  setInterval(getData, 300)
 </script>
 
 </html>
