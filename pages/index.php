@@ -104,7 +104,7 @@
     }
   }
 
-  const Millisec2Time = (millisec) => {
+  const millisec2Time = (millisec) => {
     /** ミリ秒を秒に変換 */
     const sec = Math.floor(millisec / 1000)
     /** 秒を分に変換 */
@@ -124,8 +124,12 @@
       updatePlayerText(textedData.player.title, 'playerTitle', 'メディアなし')
       updatePlayerText(textedData.player.artist, 'playerArtist')
       updatePlayerText(textedData.player.album, 'playerAlbum')
-      updatePlayerText(textedData.player.position, 'playerPosition', '0')
-      updatePlayerText(textedData.player.duration, 'playerDuration', '0')
+      updatePlayerText(
+        millisec2Time(textedData.player.position), 'playerPosition', '00:00'
+      )
+      updatePlayerText(
+        millisec2Time(textedData.player.duration), 'playerDuration', '00:00'
+      )
       /** 現在何%まで再生されているか？ */
       const nowPlayPosition = Math.round(
         Number(
