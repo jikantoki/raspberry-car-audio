@@ -38,6 +38,14 @@
       width: 0%;
       transition: all 0.5s;
     }
+
+    .playerPosition {
+      display: flex;
+    }
+
+    #playerDuration {
+      text-align: right;
+    }
   </style>
 </head>
 
@@ -65,13 +73,14 @@
         <span id="playerAlbum"></span>
         <span class="spaceWord">　</span>
       </div>
-      <div class="playerPosition">
-        <span id="playerPosition">　</span>/<span id="playerDuration">　</span>
-      </div>
       <div class="playBar">
         <div class="fullPlayBar">
           <div class="nowPlayPosition" id="nowPlayPosition"></div>
         </div>
+      </div>
+      <div class="playerPosition">
+        <div id="playerPosition">　</div>
+        <div id="playerDuration">　</div>
       </div>
     </div>
   </div>
