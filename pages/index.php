@@ -111,7 +111,7 @@
       updatePlayerText(textedData.player.album, 'playerAlbum')
       updatePlayerText(textedData.player.position, 'playerPosition', '0')
       updatePlayerText(textedData.player.duration, 'playerDuration', '0')
-      d.getElementById('nowPlayPosition').clientWidth =
+      d.getElementById('nowPlayPosition').style.width =
         `${(textedData.player.position / textedData.player.duration) * 100}%`
       console.log(`${(textedData.player.position / textedData.player.duration) * 100}%`)
       //console.log(textedData)
